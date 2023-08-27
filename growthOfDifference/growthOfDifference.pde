@@ -5,7 +5,8 @@ int WIDTH = 400;
 
 void setup() {
     size(400, 400);
-    
+    frameRate(60);
+
     OrderedDynamicLine[] step5 = generateDiagonalStep(2);
     OrderedDynamicLine[] step6 = generateOrthogonalStep(4);
     OrderedDynamicLine[] step7 = generateDiagonalStep(4);
@@ -44,6 +45,8 @@ void draw() {
         line.update();
         line.display();
     }
+
+    saveFrame("frames/frame-####.png");
 }
 
 class DynamicLine {
